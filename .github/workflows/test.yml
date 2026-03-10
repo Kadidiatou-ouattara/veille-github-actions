@@ -2,10 +2,14 @@ name: Test GitHub Actions
 
 on: push
 
+
 jobs:
   message:
     runs-on: ubuntu-latest
 
     steps:
-      - name: afficher message
-        run: echo "GitHub Actions fonctionne !"
+      - name: Cloner le projet
+        uses: actions/checkout@v3  
+        
+      - name: Afficher le contenu de message.txt
+        run: cat message.txt
